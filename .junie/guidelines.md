@@ -1,8 +1,3 @@
-# Automation
-
-Check the "scripts" section in composer.json to learn 
-how to run tools and perform common tasks.
-
 # Autoloader
 
 Dp not edit autoload.php files. 

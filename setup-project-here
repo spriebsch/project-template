@@ -1,0 +1,19 @@
+#!/bin/bash
+
+set -e
+
+if [ -f "setup-project-here" ]; then
+echo "Error: call this script from the new project directory"
+exit 1
+fi
+
+SOURCE=$(dirname "$(readlink -f "$0")")
+TARGET=$(pwd)
+
+cp -R $SOURCE/.junie $TARGET
+cp -R $SOURCE/src $TARGET
+cp -R $SOURCE/tests $TARGET
+cp $SOURCE/.gitignore $TARGET
+cp $SOURCE/composer.json $TARGET
+cp $SOURCE/phpstan.neon $TARGET
+cp $SOURCE/phpunit.xml $TARGET

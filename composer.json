@@ -22,8 +22,8 @@
     "post-autoload-dump": "@generate-autoloaders",
     "clean": "rm -rf build",
     "generate-autoloaders": [
-      "tools/phpab -q --output src/autoload.php src",
-      "tools/phpab -q --output tests/autoload.php tests"
+      "phpab -q --output src/autoload.php src",
+      "phpab -q --output tests/autoload.php tests"
     ],
     "static-analysis": "phpstan analyse src tests",
     "test": [
@@ -37,6 +37,7 @@
     "path-coverage": [
       "@putenv XDEBUG_MODE=coverage",
       "phpunit --coverage-html build/code-coverage --path-coverage"
-    ]
+    ],
+    "show-coverage": "gio open build/code-coverage/index.html"
   }
 }

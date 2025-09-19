@@ -2,10 +2,10 @@
 
 namespace spriebsch\projectTemplate;
 
-use PHPUnit\Framework\Attributes\CoversNothing;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversNothing]
+#[CoversClass(HelloWorld::class)]
 class HelloWorldTest extends TestCase
 {
     public function test_something(): void

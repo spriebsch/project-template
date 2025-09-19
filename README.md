@@ -1,3 +1,3 @@
 # PHP Project template
 
-ln -s /usr/local/bin/phpunit phpunit.phar
+sudo ln -s /path/to/setup-project-here /usr/local/bin
