@@ -1,20 +1,44 @@
-# Autoloader
+# Containerization
+
+PHP and development tools are installed in a container.
+
+Use
+
+```bash
+php-devbox php <script>
+```
+
+to execute PHP scripts inside the container.
+
+# Update Autoloaders
 
 Dp not edit autoload.php files. 
 Use 
 
 ```bash
-composer dump-autoload
+php-devbox composer dump
 ```
 
 to update autoloaders.
+
+## Run unit tests
+
+After each task, run all unit tests.
+If there are failing tests, fix the production code.
+
+To run all unit tests, use 
+
+```bash
+php-devbox phpunit
+```
+
 
 # Static Code Analysis
 
 After each task, run 
 
 ```bash
-composer static-analysis
+php-devbox composer static-analysis
 ```
 
 to perform static code analysis with PHPStan.
@@ -22,15 +46,30 @@ If errors occur, fix them.
 
 # Coding Guidelines
 
-Make every concrete class final.
+Source code is located in `src/` directory
+Test files are located in `tests/` directory
 
-Make every class readonly unless is requires mutable state.
+Do not edit autoload.php files.
+Do not edit files the vendor directory.
+Do not edit .gitignore.
+Do not edit phpunit.xml.
+Do not edit phpstan.neon.
+Do not exit composer.json or composer.lock.
+
+Make every concrete class final.
+Make classes readonly whenever possible.
 
 Minimum visibility: make every method private by default.
-Only make those methods public that need to be called from the outside.
-Do not restrict the visibility of existing methods without asking.
+Only make methods public that need to be called from the outside.
 
-Do not use variable expansion in strings, use sprintf instead.
+Prefer sprintf over variable expansion.
+Prefer attributes over docblocks.
+Do not create docblocks that are redundant with the type hints.
+Only use docblocks to document exceptions thrown.
+Use descriptive test method names.
+Use the most specific assertion possible.
+Use one logical assertion per test method.
+Avoid test dependencies.
 
 # General Rules
 
@@ -48,19 +87,19 @@ Do not change test code without asking.
 
 To run all tests:
 ```bash
-./tools/phpunit
+php-devbox phpunit
 ```
 
 ### Advanced Test Execution Options
 
 **Verbose output:**
 ```bash
-./tools/phpunit --verbose
+php-devbox phpunit --verbose
 ```
 
 **Run specific test files:**
 ```bash
-./tools/phpunit tests/ParrotTest.php
+php-devbox phpunit tests/ParrotTest.php
 ```
 
 ## Writing PHPUnit Tests - Best Practices
@@ -175,7 +214,7 @@ public function testWithMock(): void
 ### 4. Code Coverage
 - Aim for high code coverage but focus on meaningful tests
 - Use `#[CoversClass]` attribute to document coverage intent
-- Use `#[UsesClass]` for collaboratoes used in unit tests
+- Use `#[UsesClass]` for collaborators used in unit tests
 - Test edge cases and error conditions
 
 ### 5. Test Documentation
