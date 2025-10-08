@@ -1,0 +1,23 @@
+#!/bin/bash
+
+set -e
+
+if [ ! -f "bin/install" ]; then
+echo "Error: call this script from the project-template directory"
+exit 1
+fi
+
+SOURCE=$(dirname "$(dirname "$(readlink -f "$0")")")
+TARGET=$(pwd)
+
+if [ -f "/usr/local/bin/setup-project-here" ]; then
+  sudo rm /usr/local/bin/setup-project-here
+fi
+
+sudo ln -s $SOURCE/setup-project-here /usr/local/bin
+
+if [ -f "/usr/local/bin/sync-guidelines" ]; then
+  sudo rm /usr/local/bin/sync-guidelines
+fi
+
+sudo ln -s $SOURCE/sync-guidelines /usr/local/bin

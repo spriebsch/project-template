@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+if [ -f "sync-guidelines" ]; then
+echo "Error: call this script from inside your project directory"
+exit 1
+fi
+
+SOURCE=$(dirname "$(readlink -f "$0")")
+TARGET=$(pwd)
+
+meld $TARGET/.junie/guidelines.md $SOURCE/.junie/guidelines.md
