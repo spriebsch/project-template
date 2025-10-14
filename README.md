@@ -38,7 +38,7 @@ Run
 setup-project-here
 ```
 
-You now have a project 
+You now have a project set up and ready to go.
 
 If you use php-devbox, you should start php-devbox now:
 
@@ -57,16 +57,15 @@ There are no Composer dependencies by default. You can add them as needed.
 
 ### Running the tests
 
-The project template has a sample class `HelloWorld` in `src/HelloWorld.php` and
-a test `tests/HelloWorldTest.php` and is preconfigured to run the tests with PHPUnit.
+The project template has a sample class `HelloWorld` in `src/HelloWorld.php` 
+and a test `tests/HelloWorldTest.php`. 
+It is preconfigured to run the tests with PHPUnit.
 
 You can do this with
 
 ```bash
-composer test
+phpunit
 ```
-
-You must do this at least one, because the project template needs to make sure that PHPStorm recognizes PHPUnit as a library.
 
 ### Code Coverage Reports
 
@@ -76,13 +75,12 @@ If you have xdebug installed (which is default in php-devbox), you can create co
 composer code-coverage
 ```
 
-This will create the coverage report in build/coverage. You can view it in your browser by running on your host
+This will create the coverage report in build/coverage.
+You can view it in your browser by running on your host
 
 ```bash
 composer show-coverage
 ```
-
-Note that this command will not work in a container.
 
 You can also generate a path coverage report by running
 
@@ -90,14 +88,15 @@ You can also generate a path coverage report by running
 composer path-coverage
 ```
 
-This takes far longer than a normal code coverage report, which takes far longer than just running the unit tests.
+This takes far longer than a normal code coverage report,
+which takes far longer than just running the unit tests.
 
 ### Static Code Analysis
 
 Run
 
 ```bash
-composer static-analysis
+phpstan
 ```
 
 to perform static code analysis with PHPStan.
@@ -117,4 +116,7 @@ To update autoloaders, for example, after creating new classes, run
 composer dump
 ```
 
-In your application, make sure to require `src/bootstrap.php` rather than any autoloader directly.
+In your application, make sure to require `src/bootstrap.php` rather than any `autoload.php` file.
+
+Your tests can use doubles located in the `tests` directory. 
+PHPUnit is configured to use the `tests/bootstrap.php` file.  
