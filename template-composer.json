@@ -1,13 +1,7 @@
 {
-  "name": "your/name-here",
-  "description": "...",
+  "name": "spriebsch/project-template",
+  "description": "A simple template for new projects.",
   "type": "project",
-  "authors": [
-    {
-      "name": "...",
-      "email": "..."
-    }
-  ],
   "require": {
     "php": ">=8.4"
   },
