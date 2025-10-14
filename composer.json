@@ -21,14 +21,12 @@
   "scripts": {
     "post-autoload-dump": "@generate-autoloaders",
     "clean": "rm -rf build",
+    "fix-phpstorm": [
+      "if [ ! -f \"phpunit.phar\" ]; then cp /usr/local/bin/phpunit phpunit.phar; fi"
+    ],
     "generate-autoloaders": [
       "phpab -q --output src/autoload.php src",
       "phpab -q --output tests/autoload.php tests"
-    ],
-    "static-analysis": "phpstan analyse src tests",
-    "test": [
-      "if [ ! -f \"phpunit.phar\" ]; then cp /usr/local/bin/phpunit phpunit.phar; fi",
-      "phpunit"
     ],
     "code-coverage": [
       "@putenv XDEBUG_MODE=coverage",

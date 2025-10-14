@@ -14,6 +14,6 @@ cp -R $SOURCE/.junie $TARGET
 cp -R $SOURCE/src $TARGET
 cp -R $SOURCE/tests $TARGET
 cp $SOURCE/.gitignore $TARGET
-cp $SOURCE/composer.json $TARGET
+cp $SOURCE/template-composer.json $TARGET/composer.json
 cp $SOURCE/phpstan.neon $TARGET
 cp $SOURCE/phpunit.xml $TARGET

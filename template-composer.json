@@ -35,6 +35,6 @@
     "path-coverage": [
       "@putenv XDEBUG_MODE=coverage",
       "phpunit --coverage-html build/code-coverage --path-coverage"
-    ],
+    ]
   }
 }
