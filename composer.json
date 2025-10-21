@@ -13,11 +13,6 @@
   },
   "require-dev": {
   },
-  "autoload": {
-    "classmap": [
-      "src"
-    ]
-  },
   "scripts": {
     "post-autoload-dump": "@generate-autoloaders",
     "clean": "rm -rf build",
