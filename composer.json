@@ -26,7 +26,7 @@
     ],
     "generate-autoloaders": [
       "phpab -q --output src/autoload.php src",
-      "phpab -q --output tests/autoload.php tests"
+      "[ -d tests ] && phpab -q --output tests/autoload.php tests || true"
     ],
     "code-coverage": [
       "@putenv XDEBUG_MODE=coverage",
