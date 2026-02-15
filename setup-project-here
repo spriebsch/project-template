@@ -19,4 +19,5 @@ cp $SOURCE/phpstan.neon $TARGET
 cp $SOURCE/phpunit.xml $TARGET
 
 php-devbox composer dump
+php-devbox composer fix-phpstorm
 php-devbox phpunit
