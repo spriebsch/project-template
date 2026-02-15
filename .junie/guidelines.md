@@ -106,6 +106,10 @@ Use one logical assertion per test method.
 
 Avoid test dependencies.
 
+Do not name tests starting with "it".
+Use test_ name prefix, not a #[Test] attribute.  
+Do not use static assertion calls (self::), instead call the instance methods ($this->).
+
 # General Rules
 
 Never report changes in files or directories that are listed in .gitignore.
