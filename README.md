@@ -64,7 +64,7 @@ It is preconfigured to run the tests with PHPUnit.
 You can do this with
 
 ```bash
-phpunit
+php-devbox phpunit
 ```
 
 ### Code Coverage Reports
@@ -72,20 +72,20 @@ phpunit
 If you have xdebug installed (which is default in php-devbox), you can create code coverage reports by running 
 
 ```bash
-composer code-coverage
+php-devbox code-coverage
 ```
 
 This will create the coverage report in build/coverage.
 You can view it in your browser by running on your host
 
 ```bash
-composer show-coverage
+show-coverage
 ```
 
 You can also generate a path coverage report by running
 
 ```bash
-composer path-coverage
+php-devbox path-coverage
 ```
 
 This takes far longer than a normal code coverage report,
@@ -96,7 +96,7 @@ which takes far longer than just running the unit tests.
 Run
 
 ```bash
-phpstan
+php-devbox phpstan
 ```
 
 to perform static code analysis with PHPStan.
@@ -113,10 +113,10 @@ The project template deals with autoloading automatically.
 To update autoloaders, for example, after creating new classes, run
 
 ```bash
-composer dump
+php-devbox composer dump
 ```
 
-In your application, make sure to require `src/bootstrap.php` rather than any `autoload.php` file.
+In your application, make sure to require `src/bootstrap.php`.
 
 Your tests can use doubles located in the `tests` directory. 
 PHPUnit is configured to use the `tests/bootstrap.php` file.  

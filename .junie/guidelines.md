@@ -110,6 +110,8 @@ Do not name tests starting with "it".
 Use test_ name prefix, not a #[Test] attribute.  
 Do not use static assertion calls (self::), instead call the instance methods ($this->).
 
+When no expectations are configured, create stubs with $this->createStub() instead of mocks with $this->createMock().  
+
 # General Rules
 
 Never report changes in files or directories that are listed in .gitignore.
