@@ -10,4 +10,4 @@ fi
 SOURCE=$(dirname "$(readlink -f "$0")")
 TARGET=$(pwd)
 
-meld $TARGET/.junie/guidelines.md $SOURCE/.junie/guidelines.md
+meld $TARGET/AGENTS.md $SOURCE/AGENTS.md

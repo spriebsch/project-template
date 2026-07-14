@@ -1,6 +1,6 @@
 {
   "name": "spriebsch/project-template",
-  "description": "A simple template for new projects.",
+  "description": "A template for new projects and code examples.",
   "type": "project",
   "require": {
     "php": ">=8.5"
@@ -21,6 +21,6 @@
     "clean": "rm -rf build",
     "fix-phpstorm": [
       "if [ ! -f \"phpunit.phar\" ]; then cp /usr/local/bin/phpunit phpunit.phar; fi"
-    ],
+    ]
   }
 }
