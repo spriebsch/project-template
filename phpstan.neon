@@ -6,5 +6,5 @@ parameters:
   bootstrapFiles:
     - /usr/local/bin/phpunit
   excludePaths:
-    - src/autoload.php
+    - src/autoload.php (?)
     - tests/autoload.php (?)

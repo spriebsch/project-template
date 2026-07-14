@@ -3,7 +3,7 @@
   "description": "A simple template for new projects.",
   "type": "project",
   "require": {
-    "php": ">=8.4"
+    "php": ">=8.5"
   },
   "require-dev": {
   },
@@ -12,23 +12,15 @@
       "src"
     ]
   },
+  "autoload-dev": {
+    "classmap": [
+      "tests"
+    ]
+  },
   "scripts": {
-    "post-autoload-dump": "@generate-autoloaders",
     "clean": "rm -rf build",
     "fix-phpstorm": [
       "if [ ! -f \"phpunit.phar\" ]; then cp /usr/local/bin/phpunit phpunit.phar; fi"
     ],
-    "generate-autoloaders": [
-      "phpab -q --output src/autoload.php src",
-      "phpab -q --output tests/autoload.php tests"
-    ],
-    "code-coverage": [
-      "@putenv XDEBUG_MODE=coverage",
-      "phpunit --coverage-html build/code-coverage"
-    ],
-    "path-coverage": [
-      "@putenv XDEBUG_MODE=coverage",
-      "phpunit --coverage-html build/code-coverage --path-coverage"
-    ]
   }
 }

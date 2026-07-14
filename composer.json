@@ -13,6 +13,16 @@
   },
   "require-dev": {
   },
+  "autoload": {
+    "classmap": [
+      "src"
+    ]
+  },
+  "autoload-dev": {
+    "classmap": [
+      "tests"
+    ]
+  },
   "scripts": {
     "clean": "rm -rf build",
     "fix-phpstorm": [
